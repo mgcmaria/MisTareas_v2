@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+
+    <ImageView
+        android:id="@+id/fondo_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@mipmap/fondo1"
+        android:contentDescription="@string/imagen"
+        android:scaleType="fitXY"/>
+
+    <!--
+    <ImageView
+        android:id="@+id/fondo_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/label2"
+        android:layout_marginTop="60dp"
+        android:contentDescription="@string/imagen"
+        app:srcCompat="@mipmap/fondo2" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/fondo_animado"
+        android:contentDescription="@string/imagen"
+        android:scaleType="centerCrop"/>
+        -->
+
+    <TextView
+        android:id="@+id/label1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/mis_tareas"
+        android:textColor="@color/gris"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/label2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/label1"
+        android:layout_marginTop="10dp"
+        android:text="@string/mgc"
+        android:textColor="@color/gris_claro"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="165dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/usuario"
+        android:importantForAutofill="no" tools:targetApi="o"
+        android:labelFor="@id/editText"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_marginStart="0dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:labelFor="@id/editText2"
+        android:text="@string/password" tools:targetApi="o"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"/>
+
+</RelativeLayout>
