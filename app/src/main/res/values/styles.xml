@@ -8,4 +8,22 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="labels">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="edit_texts">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">70dp</item>
+        <item name="android:ems">10</item>
+        <item name="android:textColor">@color/gris</item>
+        <item name="android:textColorHint">@color/gris</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
 </resources>
