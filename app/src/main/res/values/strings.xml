@@ -12,5 +12,6 @@
     <string name="cerrar_sesion">Cerrar Sesión</string>
     <string name="salir">Salir</string>
     <string name="realizada">Hecho</string>
+    <string name="ver_historial">Ver historial</string>
 
 </resources>

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -79,11 +78,18 @@ public class MainActivity extends AppCompatActivity {
 
                 return true;
 
+            case R.id.historial:
+
+                //Accedemos al historial de tareas hechas
+                Intent intent1 = new Intent(this, HistActivity.class);
+                startActivity(intent1);
+                return true;
+
             case R.id.cerrar_sesion:
 
+                //Volvemos a la pantalla de Login
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
-                //Toast.makeText(this, "Prueba cierre Sesión", Toast.LENGTH_SHORT).show();
                 return true;
 
             case R.id.salir:
@@ -113,15 +119,15 @@ public class MainActivity extends AppCompatActivity {
         //dentro del padre buscaremos un identificador cuyo componente sea el texto de la tarea
         TextView tareaTextView = (TextView) parent.findViewById(R.id.tareaView);
         //Guardamos el contenido en otra variable
-        String tarea = tareaTextView.getText().toString();
+        String tarea_old = tareaTextView.getText().toString();
+
+        //Antes de borrar almacenamos la tarea en la tabla Histórico
+        controladorDB.anadirTarea_old(tarea_old);
         //Borramos la tarea
-        controladorDB.borrarTarea(tarea);
+        controladorDB.borrarTarea(tarea_old);
 
 
-        //Mostramos un Toast para que el usuario sepa que la tarea ha sido eliminada
-        //Toast toast = Toast.makeText(this,"Tarea Eliminada",Toast.LENGTH_SHORT);
-        //toast.show();
-
+        //Mostramos un Toast personalizado para que el usuario sepa que la tarea ha sido eliminada
 
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.toast,(ViewGroup) findViewById(R.id.toast_layout_root));

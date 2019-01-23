@@ -11,6 +11,11 @@
         app:showAsAction="always" />
 
     <item
+        android:id="@+id/historial"
+        android:title="@string/ver_historial"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/cerrar_sesion"
         android:title="@string/cerrar_sesion"
         app:showAsAction="never" />

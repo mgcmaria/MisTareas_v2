@@ -5,7 +5,7 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/tareaView"
+        android:id="@+id/tareaView_old"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -13,15 +13,5 @@
         android:layout_alignBaseline="@id/button"
         android:textColor="@color/colorAmarilloClarito"
         android:textStyle="bold"/>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/realizada"
-        android:layout_alignParentRight="true"
-        android:background="@android:color/white"
-        android:textColor="@color/colorPrimaryDark"
-        android:onClick="borrarTarea"/>
 
 </RelativeLayout>

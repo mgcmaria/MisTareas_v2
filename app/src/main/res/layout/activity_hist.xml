@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".HistActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView3_old"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:srcCompat="@drawable/mar"
@@ -19,9 +19,9 @@
         android:background="@drawable/gradient1"/>
 
     <ListView
-        android:id="@+id/listTareas"
+        android:id="@+id/listTareas_old"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-         />
+        />
 
 </android.support.constraint.ConstraintLayout>
