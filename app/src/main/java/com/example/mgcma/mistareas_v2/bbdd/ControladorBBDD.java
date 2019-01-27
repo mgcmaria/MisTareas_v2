@@ -11,6 +11,10 @@ import java.util.ArrayList;
 
 public class ControladorBBDD extends SQLiteOpenHelper {
 
+    public static final String TABLE_ID="_id";
+    public static final String NOMBRE="nombre";
+    public static final String TABLE="tareas_old";
+
     //Constructor
     public ControladorBBDD(Context context) {
         super(context, "com.example.mgcma.mistareas_v2.bbdd", null, 1);
@@ -23,6 +27,7 @@ public class ControladorBBDD extends SQLiteOpenHelper {
 
         //Creamos otra tabla de tareas históricas para recoger aquellas que se han eliminado
         db.execSQL("CREATE TABLE TAREAS_OLD (ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE TEXT NOT NULL)");
+        //db.execSQL("CREATE TABLE "+ TABLE+ " ("+TABLE_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+NOMBRE+" TEXT NOT NULL)");
     }
 
     //Este método lo utilizariamos en caso de cambiar la versión de la bbdd, haciendo una migración de la antigua a la nueva
@@ -140,6 +145,10 @@ public class ControladorBBDD extends SQLiteOpenHelper {
         return cursor.getCount();
     }
 
-    
+    public Cursor getTareas(){
+        String columnas[] = {TABLE_ID,NOMBRE};
+        Cursor c = this.getReadableDatabase().query(TABLE,columnas,null,null,null,null,null);
+        return c;
+    }
 
 }

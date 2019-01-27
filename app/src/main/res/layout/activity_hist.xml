@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:srcCompat="@drawable/mar"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY"
+        android:contentDescription="@string/imagen" />
 
     <View
         android:layout_width="match_parent"
@@ -20,8 +21,8 @@
 
     <ListView
         android:id="@+id/listTareas_old"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         />
 
 </android.support.constraint.ConstraintLayout>

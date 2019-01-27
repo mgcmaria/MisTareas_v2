@@ -5,10 +5,9 @@
     android:padding="16dp">
 
     <TextView
+        style="@style/item_tarea"
         android:id="@+id/tareaView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/textview"
         android:textSize="15sp"
         android:layout_alignBaseline="@id/button"
         android:textColor="@color/colorAmarilloClarito"
@@ -16,12 +15,14 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/realizada"
+        style="@style/item_tarea"
+        android:layout_width="54dp"
+        android:layout_height="41dp"
         android:layout_alignParentRight="true"
-        android:background="@android:color/white"
-        android:textColor="@color/colorPrimaryDark"
-        android:onClick="borrarTarea"/>
+        android:layout_marginRight="15dp"
+        android:background="@drawable/boton_drawable"
+        android:drawableBottom="@mipmap/hecho"
+        android:onClick="borrarTarea"
+        android:text="@string/realizada"/>
 
 </RelativeLayout>

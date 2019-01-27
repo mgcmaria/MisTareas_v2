@@ -69,6 +69,21 @@ public class MainActivity extends AppCompatActivity {
                                 //Accedemos al metodo de la Clase ControladorBBDD que hemos creado
                                 //de añadir tarea y le pasamos como texto el contenido de la caja de texto
                                 controladorDB.anadirTarea(tarea);
+
+                                LayoutInflater inflater = getLayoutInflater();
+                                View layout = inflater.inflate(R.layout.toast,(ViewGroup) findViewById(R.id.toast_layout_root));
+
+                                ImageView image = (ImageView) layout.findViewById(R.id.image);
+                                image.setImageResource(R.mipmap.hecho);
+                                TextView text = (TextView) layout.findViewById(R.id.text);
+                                text.setText("Nueva tarea pendiente");
+
+                                Toast toast = new Toast(getApplicationContext());
+                                //toast.setGravity(Gravity.BOTTOM, 0, 0);
+                                toast.setDuration(Toast.LENGTH_LONG);
+                                toast.setView(layout);
+                                toast.show();
+
                                 actualizarInterfaz();
                             }
                         })
@@ -93,8 +108,9 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.salir:
-                Toast.makeText(this, "Prueba Salir de la aplicación", Toast.LENGTH_SHORT).show();
-                return true;
+                //int p = android.os.Process.myPid();
+                //android.os.Process.killProcess(p);
+                android.os.Process.killProcess(android.os.Process.myPid());
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -119,12 +135,12 @@ public class MainActivity extends AppCompatActivity {
         //dentro del padre buscaremos un identificador cuyo componente sea el texto de la tarea
         TextView tareaTextView = (TextView) parent.findViewById(R.id.tareaView);
         //Guardamos el contenido en otra variable
-        String tarea_old = tareaTextView.getText().toString();
+        String tarea = tareaTextView.getText().toString();
 
         //Antes de borrar almacenamos la tarea en la tabla Histórico
-        controladorDB.anadirTarea_old(tarea_old);
+        controladorDB.anadirTarea_old(tarea);
         //Borramos la tarea
-        controladorDB.borrarTarea(tarea_old);
+        controladorDB.borrarTarea(tarea);
 
 
         //Mostramos un Toast personalizado para que el usuario sepa que la tarea ha sido eliminada
